@@ -7,3 +7,8 @@ Updated     : Auto increment id
 Date        : 24/11/22
 Time        : 12:47 AM
 Contributor : Elahi
+
+Updated     : Javascript added in Registration, Validation updated
+Date        : 24/11/22
+Time        : 12:47 AM
+Contributor : Elahi

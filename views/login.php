@@ -20,48 +20,58 @@ if(isset($_SESSION['password'])){
 </head>
 
 <body>
-    <table>
-        <tr>
-            <td>
-                <form action="../controllers/loginValidator.php" method="post">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="../index.php"><img src="../Smart_Hostel.gif" height="200px"></a>
-                            </td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <th>
-                                            Login
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="text" name="uid" value="" placeholder="User ID" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="password" name="password" value="" placeholder="Password" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="submit" name="" value="Submit" />
-                                            <a href="forgetpass.php">
-                                                Forget Password
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </td>
-        </tr>
-    </table>
+    <center>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <form action="../controllers/loginValidator.php" method="post">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="../index.php"><img src="../assets/image/Smart_Hostel.gif" height="200px"></a>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <th>
+                                                    Login
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" name="uid" value="" placeholder="User ID" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="password" name="password" value="" placeholder="Password" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="submit" name="" value="Submit" />
+                                                    <a href="forgetpass.php">
+                                                        Forget Password
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Don't have an Account?<a href="registration.php">Sign up</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </center>
 </body>
 
 </html>

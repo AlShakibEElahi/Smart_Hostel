@@ -39,7 +39,7 @@
                     <table width="100%">
                         <tr>
                             <td width="30%">
-                                <form method="post" action="adminsection.php">
+                                <form method="post" action="../../controllers/adminsection/adminsection.php">
                                     <fieldset>
                                         <table>
                                             <tr align="left">

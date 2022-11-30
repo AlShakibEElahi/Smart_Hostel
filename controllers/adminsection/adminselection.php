@@ -10,26 +10,26 @@ session_start();
     if($chc=="addemployee"){
          header('location:../../views/admindashboards/addemployee.php');
     }elseif($chc=="updateinformation"){
-        header('location:updateinformation.php');
+        header('location:../../views/admindashboards/updateinformation.php');
     }elseif($chc=="employeedetails"){
-        header('location:employeedetails.php');
+        header('location:../../views/admindashboards/employeedetails.php');
     }elseif($chc=="adduser"){
-        header('location:adduser.php');
+        header('location:../../views/admindashboards/adduser.php');
     }elseif($chc=="updatedetails"){
-        header('location:updatedetails.php');
+        header('location:../../views/admindashboards/updatedetails.php');
     }elseif($chc=="addnewfacility"){
-        header('location:addnewfacility.php');
+        header('location:../../views/admindashboards/addnewfacility.php');
     }elseif($chc=="updatefacility"){
-        header('location:updatefacility.php');
+        header('location:../../views/admindashboards/updatefacility.php');
     }elseif($chc=="addnewbranch"){
-        header('location:addnewbranch.php');
+        header('location:../../views/admindashboards/addnewbranch.php');
     }elseif($chc=="branchdetails"){
-        header('location:branchdetails.php');
+        header('location:../../views/admindashboards/branchdetails.php');
     }elseif($chc=="addnewroom"){
-        header('location:addnewroom.php');
+        header('location:../../views/admindashboards/addnewroom.php');
     }elseif($chc=="updateroomfacilityy"){
-        header('location:updateroomfacility.php');
+        header('location:../../views/admindashboards/updateroomfacility.php');
     }elseif($chc=="totalrevenue"){
-        header('location:totalrevenue.php');
+        header('location:../../views/admindashboards/totalrevenue.php');
     }
 ?>

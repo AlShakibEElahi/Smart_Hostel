@@ -17,17 +17,20 @@
         $user=['uid'=>$uid, 'password'=>$password];
         $status=login($user);
         if(isset($_SESSION['user'])){
+            $role=$_SESSION['user']['role'];
+            $name=searchbyID($user);
+            $_SESSION['user']['name']=$name;
             setcookie('logstatus', 'true', time()+3600, '/');
-            if($_SESSION['user']['role']=="admin"){
+            if($role=="admin"){
                 header('location: ../views/admindashboard.php');
             }
-            if($_SESSION['user']['role']=="employee"){
+            if($role=="employee"){
                 header('location: ../views/employeedashboard.php');
             }
-            if($_SESSION['user']['role']=="user"){
+            if($role=="user"){
                 header('location: ../views/userdashboard.php');
             }
-            if($_SESSION['user']['role']=="general"){
+            if($role=="general"){
                 header('location: ../views/home.php');
             }
         }
