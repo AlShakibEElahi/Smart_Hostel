@@ -1,11 +1,14 @@
 <?php
+    require_once '../../models/loginmodel.php';
     require_once '../../models/employeeModel.php';
+
     $name = $_POST["name"];
     $fname= $_POST["fathername"];
     $mname= $_POST["mothername"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $dob=$_POST["dob"];
+    $gender=$_POST["gender"];
     $designation = $_POST["designation"];
     $branch = $_POST["branch"];
     $salary = $_POST["salary"];
@@ -37,10 +40,10 @@
         $id=searchforID();
         echo $id;
         $user=['id'=>$id,'name'=>$name,'fname'=>$fname,'mname'=>$mname ,'dob'=>$dob,'designation'=>$designation,'salary'=>$salary,'branch'=>$branch,'email'=>$email,'phone'=>$phone,'username'=>$username,'password'=>$password];
-        $status=addemployeeinemp($user);
-        $status=addemployeeinlogin($user);
+        $status=addlogininfo($user);
+        $status=addemployee($user);
 
-        if(isset($_SESSION['insertemployee']) && isset($_SESSION['insertemployeelogin'])){
+        if(isset($_SESSION['insertemployee']) && isset($_SESSION['insertlogininfo'])){
             header('location: ../../views/admindashboards/addemployee.php');
         }
     //}

@@ -38,60 +38,59 @@
                                     <fieldset>
                                         <table>
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="employeemanagement" />Employee Management</td>
                                                 <td>
                                                     <select name="employeemanagement">
+                                                        <option value="">Employee Management</option>
                                                         <option value="addemployee">Add Employee</option>
-                                                        <option value="updateinformation">Update Information</option>
                                                         <option value="employeedetails">Employee Details</option>
                                                     </select>
                                                 </td>
                                             </tr>
 
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="usermanagement" />User Management</td>
                                                 <td>
                                                     <select name="usermanagement">
+                                                        <option value="">User Management</option>
                                                         <option value="adduser">Add User</option>
-                                                        <option value="updatedetails">Update Details</option>
+                                                        <option value="userdetails">User Details</option>
                                                     </select>
                                                 </td>
                                             </tr>
 
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="facilityAndServices" />Facility & Services</td>
                                                 <td>
                                                     <select name="facilityAndServices">
-                                                        <option value="addnewfacility">Add new Facility</option>
-                                                        <option value="updatefacility">Update Facility</option>
+                                                        <option value="">Facility & Services</option>
+                                                        <option value="addfacility">Add new Facility</option>
+                                                        <option value="facilitydetails">Facility Details</option>
                                                     </select>
                                                 </td>
                                             </tr>
 
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="branch" />Branch</td>
                                                 <td>
                                                     <select name="branch">
-                                                        <option value="addnewbranch">Add new branch</option>
+                                                        <option value="">Branch</option>
+                                                        <option value="addbranch">Add new branch</option>
                                                         <option value="branchdetails">Branch Details</option>
                                                     </select>
                                                 </td>
                                             </tr>
 
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="room" />Room</td>
                                                 <td>
                                                     <select name="room">
-                                                        <option value="addnewroom">Add new room</option>
-                                                        <option value="updatefacility">Update Facility</option>
+                                                        <option value="">Room</option>
+                                                        <option value="addroom">Add new room</option>
+                                                        <option value="roomdetails">Room Details</option>
                                                     </select>
                                                 </td>
                                             </tr>
 
                                             <tr align="left">
-                                                <td><input type="radio" name="admOpt" value="accounts" />Accounts</td>
                                                 <td>
                                                     <select name="accounts">
+                                                        <option value="">Accounts</option>
                                                         <option value="totalrevenue">Total Revenue</option>
                                                     </select>
                                                 </td>

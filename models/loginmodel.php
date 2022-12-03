@@ -12,6 +12,16 @@
             return $_SESSION['user']=$user;
         }
     }
+
+    function addlogininfo($user){
+        $con = getconnection();
+        $sql1 = "INSERT INTO `login`(`id`, `email`, `phonenumber`, `username`, `password`, `role`,`dashboard`) VALUES ('{$user['id']}','{$user['email']}','{$user['phone']}','{$user['username']}','{$user['password']}','{$user['designation']}','{$user['dashboard']}')";
+        $result = mysqli_query($con, $sql1);
+        
+        if($result){
+            return $_SESSION['insertlogininfo']="Login can be done<br>User ID: ".$user['id']."<br>Password: ".$user['password'];
+        }
+    }
     function searchbyID($user){
         $con = getconnection();
         $sql = "select * from {$user['role']} where id='{$user['id']}'";
