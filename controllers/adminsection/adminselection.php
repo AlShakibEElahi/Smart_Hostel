@@ -1,35 +1,37 @@
 <?php
 session_start();
-    if(!isset($_COOKIE['logstatus'])){
-        header('location:../login.php');
-    }
-    $opt=$_POST['admOpt'];
-    $chc=$_POST[$opt];
-
-    echo $opt.$chc;
+    $chc = $_GET['name'];
     if($chc=="addemployee"){
-         header('location:../../views/admindashboards/addemployee.php');
-    }elseif($chc=="updateinformation"){
-        header('location:../../views/admindashboards/updateinformation.php');
-    }elseif($chc=="employeedetails"){
-        header('location:../../views/admindashboards/employeedetails.php');
-    }elseif($chc=="adduser"){
-        header('location:../../views/admindashboards/adduser.php');
-    }elseif($chc=="updatedetails"){
-        header('location:../../views/admindashboards/updatedetails.php');
-    }elseif($chc=="addnewfacility"){
-        header('location:../../views/admindashboards/addnewfacility.php');
-    }elseif($chc=="updatefacility"){
-        header('location:../../views/admindashboards/updatefacility.php');
-    }elseif($chc=="addnewbranch"){
-        header('location:../../views/admindashboards/addnewbranch.php');
-    }elseif($chc=="branchdetails"){
-        header('location:../../views/admindashboards/branchdetails.php');
-    }elseif($chc=="addnewroom"){
-        header('location:../../views/admindashboards/addnewroom.php');
-    }elseif($chc=="updateroomfacilityy"){
-        header('location:../../views/admindashboards/updateroomfacility.php');
-    }elseif($chc=="totalrevenue"){
-        header('location:../../views/admindashboards/totalrevenue.php');
+        echo 'addemployee.php';
+    }
+    else if($chc=="employeedetails"){
+        echo 'employeedetails.php';
+    }
+    else if($chc=="adduser"){
+        echo 'adduser.php';
+    }
+    else if($chc=="userdetails"){
+        echo 'userdetails.php';
+    }
+    else if($chc=="addnewfacility"){
+        echo 'addnewfacility.php';
+    }
+    else if($chc=="facilitydetails"){
+        echo 'employeedetails.php';
+    }
+    else if($chc=="addnewbranch"){
+        echo 'addnewbranch.php';
+    }
+    else if($chc=="branchdetails"){
+        echo 'branchdetails.php';
+    }
+    else if($chc=="addnewroom"){
+        echo 'addnewroom.php';
+    }
+    else if($chc=="roomdetails"){
+        echo 'roomdetails.php';
+    }
+    else if($chc=="totalrevenue"){
+        echo 'totalrevenue.php';
     }
 ?>

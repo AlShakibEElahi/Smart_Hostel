@@ -19,15 +19,24 @@
         }
     }
 
-    function addemployee($user){
+    function addemployeeinemp($user){
         $con = getconnection();
-        $sql2 = "INSERT INTO `employee`(`id`, `name`, `fathername`, `mothername`, `dob`, `gender`, `designation`, `salary`, `branch`) VALUES ('{$user['id']}','{$user['name']}','{$user['fname']}','{$user['mname']}','{$user['dob']}','{$user['gender']}','{$user['designation']}','{$user['salary']}','{$user['branch']}')";
+        $sql2 = "INSERT INTO `employee`(`id`, `name`, `fathername`, `mothername`, `dob`, `designation`, `salary`, `branch`) VALUES ('{$user['id']}','{$user['name']}','{$user['fname']}','{$user['mname']}','{$user['dob']}','{$user['designation']}','{$user['salary']}','{$user['branch']}')";
         $result2 = mysqli_query($con, $sql2);
+        
         if($result2){
             return $_SESSION['insertemployee']="Insert Employee Successfull";
         }
     }
-
+    function addemployeeinlogin($user){
+        $con = getconnection();
+        $sql1 = "INSERT INTO `login`(`id`, `email`, `phonenumber`, `username`, `password`, `role`) VALUES ('{$user['id']}','{$user['email']}','{$user['phone']}','{$user['username']}','{$user['password']}','{$user['designation']}')";
+        $result = mysqli_query($con, $sql1);
+        
+        if($result){
+            return $_SESSION['insertemployeelogin']="Login can be done<br>User ID: ".$user['id']."<br>Password: ".$user['password'];
+        }
+    }
     function editemployee($user){
         $con = getconnection();
         $sql = "UPDATE `login` SET `id`='[value-1]',`name`='[value-2]',`email`='[value-3]',`phonenumber`='[value-4]',`username`='[value-5]',`password`='[value-6]',`role`='[value-7]' WHERE username='{$user['username']}'";
@@ -61,6 +70,12 @@
     function showallemp(){
         $con = getconnection();
         $sql = "select * from employee";
+        $result = mysqli_query($con, $sql);
+        return $result;
+    }
+    function showallempbyname($name){
+        $con = getconnection();
+        $sql = "SELECT * FROM employee WHERE `name` LIKE '".$name."' ORDER BY id ASC;";
         $result = mysqli_query($con, $sql);
         return $result;
     }

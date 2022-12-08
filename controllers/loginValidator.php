@@ -22,7 +22,7 @@
             $_SESSION['user']['name']=$name;
             setcookie('logstatus', 'true', time()+3600, '/');
             if($role=="admin"){
-                header('location: ../views/admindashboard.php');
+                header('location: ../views/admindashboards/admindashboard.php');
             }
             if($role=="employee"){
                 header('location: ../views/employeedashboard.php');
