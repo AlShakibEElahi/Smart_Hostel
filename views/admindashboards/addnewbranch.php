@@ -3,9 +3,13 @@
     if(!isset($_COOKIE['logstatus'])){
         header('location:../login.php');
     }
-    if(isset($_SESSION['err'])){
-        echo $_SESSION['err'];
-        unset($_SESSION['err']);
+    if(isset($_SESSION['insertbrancherr'])){
+        echo $_SESSION['insertbrancherr'];
+        unset($_SESSION['insertbrancherr']);
+    }
+    if(isset($_SESSION['insertbranch'])){
+        echo $_SESSION['insertbranch'];
+        unset($_SESSION['insertbranch']);
     }
     if(isset($_SESSION['addValid'])){
         echo $_SESSION['addValid'];
@@ -16,6 +20,7 @@
 <html>
     <head>
         <title>Admin Dashboard</title>
+        <script src="../dashboard.js"></script>
     </head>
     <body>
         <table border="4" width="100%" height="100%">
@@ -105,21 +110,32 @@
                                 </form>
                             </td>
                             <td align="center">
-                                <form method="post" action="addemployeevalidator.php">
+                                <form method="post" action="../../controllers/adminsection/addbranchval.php">
                                     <fieldset>
                                         <legend>Add New Branch</legend>
                                         <table>
                                             <tr>
-                                                <td>Branch Name</td>
-                                                <td>:<input type="text" name="branchname" /></td>
+                                                <td><input type="text" name="branchname" placeholder="Branch Name"/></td>
                                             </tr>
                                             <tr>
-                                                <td>Address</td>
-                                                <td>:<input type="text" name="branchaddress" /></td>
+                                                <td>
+                                                    <fieldset>
+                                                        <legend>Address</legend>
+                                                        <input type="text" name="houseno" placeholder="House No."/>
+                                                        <input type="text" name="roadno" placeholder="Road No."/>
+                                                        <input type="text" name="area" placeholder="Area"/>
+                                                        <input type="text" name="city" placeholder="City"/>
+                                                    </fieldset>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Branch Manager</td>
-                                                <td>:<input type="text" name="branchmanager" /></td>
+                                                <td>
+                                                    <select name="branchtype">
+                                                        <option value="">Select Type</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="roomdetails">Female</option>
+                                                    </select>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td align="center" colspan="2"><input type="submit" name="insert" value="ADD" ></td>
@@ -133,85 +149,5 @@
                 </td>
             </tr>
         </table>
-        <script>
-            function change1() {
-                let name = document.getElementById('emp1').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change2() {
-                let name = document.getElementById('emp2').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change3() {
-                let name = document.getElementById('emp3').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change4() {
-                let name = document.getElementById('emp4').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change5() {
-                let name = document.getElementById('emp5').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change6() {
-                let name = document.getElementById('emp6').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-        </script>
     </body>
 </html>

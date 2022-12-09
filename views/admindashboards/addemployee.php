@@ -20,6 +20,7 @@
 <html>
     <head>
         <title>Admin Dashboard</title>
+        <script src="../dashboard.js"></script>
     </head>
     <body>
         <table border="4" width="100%" height="100%">

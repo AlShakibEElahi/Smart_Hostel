@@ -20,12 +20,12 @@
         unset($_SESSION['insertemployeelogin']);
     }
 ?>
-<?php?>
 <html>
     <head>
+        <script src="../dashboard.js"></script>
         <title>Admin Dashboard</title>
     </head>
-    <body>
+    <body onload="search()">
         <table border="4" width="100%" height="100%">
             <tr>
                 <td>
@@ -120,7 +120,7 @@
                                                 <tabble>
                                                     <tr>
                                                         <td colspan='9'>
-                                                            <input type='text' name='name' value='' id='na1' onkeyup='search()' onclick='def()'>
+                                                            <input type='text' name='name' value='' id='na1' onkeyup='search()'>
                                                             <input type='submit' value='Search by name'>
                                                         </td>
                                                     </tr>
@@ -140,108 +140,5 @@
                 </td>
             </tr>
         </table>
-        <script>
-            function change1() {
-                let name = document.getElementById('emp1').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change2() {
-                let name = document.getElementById('emp2').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change3() {
-                let name = document.getElementById('emp3').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change4() {
-                let name = document.getElementById('emp4').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change5() {
-                let name = document.getElementById('emp5').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function change6() {
-                let name = document.getElementById('emp6').value;
-                if (name != "") {
-                    let xhttp = new XMLHttpRequest();
-                    xhttp.open('GET', '../../controllers/adminsection/adminselection.php?name=' + name, true);
-                    xhttp.send();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            window.location.href = this.responseText;
-                        }
-                    }
-                }
-            }
-            function search() {
-                let name = document.getElementById('na1').value;
-                let xhttp = new XMLHttpRequest();
-                xhttp.open('POST', '../../controllers/adminsection/employeedetailsvalidator.php', true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send('name='+name);
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementsByTagName('p')[0].innerHTML = this.responseText;                        
-                    }
-                }
-            }
-            function def() {
-                let name = document.getElementById('na1').value;
-                let xhttp = new XMLHttpRequest();
-                xhttp.open('GET', '../../controllers/adminsection/employeedetailsvalidator.php?name=' + name, true);
-                xhttp.send();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementsByTagName('p')[0].innerHTML = this.responseText;                        
-                    }
-                }
-            }
-        </script>
     </body>
 </html>
