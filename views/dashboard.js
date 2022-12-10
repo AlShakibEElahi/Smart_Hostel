@@ -101,7 +101,7 @@ function change6() {
     }
 }
 function search() {
-    let name = document.getElementById('na1').value;
+    let name = document.getElementByTagName('select')[6].value;
     let xhttp = new XMLHttpRequest();
     xhttp.open('POST', '../../controllers/adminsection/employeedetailsvalidator.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -121,6 +121,19 @@ function searchbranch() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementsByTagName('p')[0].innerHTML = this.responseText;
+        }
+    }
+}
+function showavaiablepackage() {
+    let name = document.getElementById('branchroom').value;
+    if (name != " ") {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open('POST', '../../controllers/adminsection/getpackage.php?name=' + name, true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementsByTagName('select')[7].innerHTML = this.responseText;
+            }
         }
     }
 }

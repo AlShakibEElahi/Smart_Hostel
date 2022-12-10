@@ -17,3 +17,8 @@ Updated     : Search and Dashboard done with Ajax
 Date        : 24/11/22
 Time        : 12:47 AM
 Contributor : Elahi
+
+Updated     : Ajax applied on Getting available packages
+Date        : 10/12/22
+Time        : 12:47 PM
+Contributor : Elahi

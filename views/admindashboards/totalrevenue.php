@@ -83,7 +83,9 @@
                                                 <td>
                                                     <select name="room" onchange="change5()" id='emp5'>
                                                         <option value="">Room</option>
+                                                        <option value="addpackage">Add Package</option>
                                                         <option value="addnewroom">Add new room</option>
+                                                        <option value="packagedetails">Update Facility</option>
                                                         <option value="roomdetails">Update Facility</option>
                                                     </select>
                                                 </td>

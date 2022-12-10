@@ -1,11 +1,15 @@
 <?php
-    session_start();
+    require_once '../../models/branchmodel.php';
     if(!isset($_COOKIE['logstatus'])){
         header('location:../login.php');
     }
-    if(isset($_SESSION['err'])){
-        echo $_SESSION['err'];
-        unset($_SESSION['err']);
+    if(isset($_SESSION['insertbrancherr'])){
+        echo $_SESSION['insertbrancherr'];
+        unset($_SESSION['insertbrancherr']);
+    }
+    if(isset($_SESSION['insertbranch'])){
+        echo $_SESSION['insertbranch'];
+        unset($_SESSION['insertbranch']);
     }
     if(isset($_SESSION['addValid'])){
         echo $_SESSION['addValid'];
@@ -15,8 +19,8 @@
 <?php?>
 <html>
     <head>
-        <script src="../dashboard.js"></script>
         <title>Admin Dashboard</title>
+        <script src="../dashboard.js"></script>
     </head>
     <body>
         <table border="4" width="100%" height="100%">
@@ -106,27 +110,38 @@
                                 </form>
                             </td>
                             <td align="center">
-                                <form method="post" action="addemployeevalidator.php">
+                                <form method="post" action="../../controllers/adminsection/addroomval.php">
                                     <fieldset>
                                         <legend>Add New Room</legend>
                                         <table>
                                             <tr>
-                                                <td>Room No</td>
-                                                <td>:<input type="text" name="roomno" /></td>
+                                                <td><input type="text" name="roomno" placeholder="Room no."/></td>
                                             </tr>
                                             <tr>
-                                                <td>Room Type</td>
-                                                <td>:
-                                                    <select name="roomtype">
-                                                        <option value="">DELUX</option>
-                                                        <option value="">AC</option>
-                                                        <option value="">Non AC</option>
-                                                    </select>
+                                                <td>
+                                                    <?php 
+                                                        $results=showbranchid();
+                                                        $rows=mysqli_num_rows($results);
+                                                        if($rows>0){
+                                                            echo "<select name='branch' id='branchroom' onchange='showavaiablepackage()'><option value='' id='branchroom' onchange='showavaiablepackage()'>Select Branch</option>";          
+                                                            while($row = mysqli_fetch_assoc($results)){
+                                                                echo "<option value='".$row['id']."'>".$row['id']."</option>";
+                                                            }
+                                                            echo "</select>";
+                                                        }
+                                                        else{
+                                                            echo "No Branch added yet...";
+                                                        }
+                                                    ?>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Room price</td>
-                                                <td>:<input type="number" name="roomprice" /></td>
+                                                <td>
+                                                    <select name="branchtype">
+                                                        <option value="">Select a Package</option>
+                                                    </select>
+                                                    <p></p>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td align="center" colspan="2"><input type="submit" name="insert" value="ADD" ></td>

@@ -28,7 +28,6 @@
             return $_SESSION['insertbranch']="Branch Added Successfully";
         }
     }
-    
     function editbranch($user){
         $con = getconnection();
         $sql = "UPDATE `branch` SET `id`='[value-1]',`name`='[value-2]',`email`='[value-3]',`phonenumber`='[value-4]',`username`='[value-5]',`password`='[value-6]',`role`='[value-7]' WHERE username='{$user['username']}'";
@@ -49,21 +48,15 @@
             return $_SESSION['user']=$user;
         }
     }
-    function showbranchid(){
+    function showallbranch(){
         $con = getconnection();
-        $sql = "select `id` from branch";
+        $sql = "select * from branch";
         $result = mysqli_query($con, $sql);
         return $result;
     }
     function showallbranchbyname($name){
         $con = getconnection();
         $sql = "SELECT * FROM branch WHERE `branchname` LIKE '".$name."' ORDER BY id ASC;";
-        $result = mysqli_query($con, $sql);
-        return $result;
-    }
-    function showallpackages($id){
-        $con = getconnection();
-        $sql = "SELECT `economy`,`firstclass`,`businessclass` FROM `branch` where `id`='".$id."'";
         $result = mysqli_query($con, $sql);
         return $result;
     }

@@ -130,6 +130,16 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <fieldset>
+                                                        <legend>Available Packages</legend>
+                                                        <input type="checkbox" name="economy" value="Yes">Economy
+                                                        <input type="checkbox" name="businessclass" value="Yes">Business Class
+                                                        <input type="checkbox" name="firstclass" value="Yes">First Class
+                                                    </fieldset>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <select name="branchtype">
                                                         <option value="">Select Type</option>
                                                         <option value="Male">Male</option>
@@ -138,7 +148,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" colspan="2"><input type="submit" name="insert" value="ADD" ></td>
+                                                <td align="center">
+                                                    <input type="submit" name="insert" value="ADD" >
+                                                    <input type="reset" name="insert" value="Reset" >
+                                                </td>
                                             </tr>
                                         </table>
                                     </fieldset>
