@@ -101,7 +101,7 @@ function change6() {
     }
 }
 function search() {
-    let name = document.getElementByTagName('select')[6].value;
+    let name = document.getElementById('empshow').value;
     let xhttp = new XMLHttpRequest();
     xhttp.open('POST', '../../controllers/adminsection/employeedetailsvalidator.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

@@ -115,7 +115,10 @@
                                         <legend>Add New Room</legend>
                                         <table>
                                             <tr>
-                                                <td><input type="text" name="roomno" placeholder="Room no."/></td>
+                                                <td>
+                                                    <input type="text" name="roomno" id='roomno' placeholder="Room no."/>
+                                                    <p id='romexits'></p>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -144,7 +147,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" colspan="2"><input type="submit" name="insert" value="ADD" ></td>
+                                                <td align="center" colspan="2"><input type="submit" name="insert" value="ADD" onclick='checkroomexits()'></td>
                                             </tr>
                                         </table>
                                     </fieldset>
@@ -155,5 +158,20 @@
                 </td>
             </tr>
         </table>
+        <script>
+            function checkroomexits() {
+                let roomno = document.getElementById('roomno').value;
+                if (roomno != " ") {
+                    let xhttp = new XMLHttpRequest();
+                    xhttp.open('POST', '../../controllers/adminsection/roomexistancecheck.php?roomno=' + roomno, true);
+                    xhttp.send();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementsByTagName('p')[0].innerHTML = this.responseText;
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

@@ -1,22 +1,12 @@
 <?php
     require_once 'db.php';
         
-    function searchforid(){
+    function checkexistance($roomno){
         $con = getconnection();
-        $sql = "SELECT max(id) FROM `branch`";
+        $sql = "SELECT COUNT(roomno) FROM room WHERE `roomno`='$roomno'";
         $result = mysqli_query($con, $sql);
-        $users = mysqli_fetch_assoc($result);
-        $user=$users['max(id)'];
-        if($user != null){
-            $lastint=(int)$user;
-            $format=substr($user,0,(strlen($user)-1));
-            $lastint=(int)substr($user,strrpos($user,'-')+1,(strlen($user)));
-            $newid=$format.($lastint+1);
-            return $newid;
-        }
-        else{
-            return "Branch-1";
-        }
+        $existance = mysqli_fetch_assoc($result);
+        return $existance;
     }
 
     function addbranch($branch){

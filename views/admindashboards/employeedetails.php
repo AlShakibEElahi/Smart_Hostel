@@ -120,7 +120,7 @@
                                                 <tabble>
                                                     <tr>
                                                         <td colspan='9'>
-                                                            <input type='text' name='name' value='' id='na1' onkeyup='search()'>
+                                                            <input type='text' name='name' value='' id='empshow' onkeyup='search()'>
                                                             <input type='submit' value='Search by name'>
                                                         </td>
                                                     </tr>
